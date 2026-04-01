@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free USDT</title>
+
+<!-- TAILWIND -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-white overflow-x-hidden">
+
+<div class="flex justify-center items-center p-4">
+
+<div class="border border-black rounded-lg min-w-[230px] w-[450px] md:w-[700px] h-auto py-4 px-5">
+
+  <!-- FOLLOW SECTION -->
+  <div class="text-center mb-8">
+
+    <p class="text-lg font-semibold mb-3">
+      Follow me on X to unlock your free 5 - 10 USDT 👇
+    </p>
+
+    <!-- Twitter Follow Button -->
+    <a href="https://x.com/Sochimaobi89987" target="_blank" 
+       id="twitterFollow" 
+       class="inline-block bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800">
+      🐦 Follow me on X
+    </a>
+
+    <p class="text-sm mt-2 text-gray-600">
+      *Click the button above before submitting the form*
+    </p>
+
+  </div>
+
+  <!-- FORM -->
+  <form id="myForm">
+
+    <div class="flex flex-col gap-10">
+
+      <!-- NAME -->
+      <label for="name">
+        <h1 class="font-bold text-md md:text-xl">Name:</h1>
+        <input type="text" name="name" id="name" required
+          placeholder="Enter your name"
+          class="border-b border-gray-400 outline-none w-full text-md font-semibold md:text-xl">
+      </label>
+
+      <!-- EMAIL -->
+      <label for="email">
+        <h1 class="font-bold text-md md:text-xl">Email:</h1>
+        <input type="email" name="email" id="email" required
+          placeholder="Enter your email"
+          class="border-b border-gray-400 outline-none w-full text-md font-semibold md:text-xl">
+      </label>
+
+      <!-- HOW DO YOU KNOW ABOUT US -->
+      <label for="ref">
+        <h1 class="font-bold text-md md:text-xl">How do you know about us?</h1>
+        <input type="text" name="ref" id="ref" required
+          placeholder="Twitter/Facebook/Instagram/etc"
+          class="border-b border-gray-400 outline-none w-full text-md font-semibold md:text-xl">
+      </label>
+
+      <!-- USDT ADDRESS -->
+      <label for="wallet">
+        <h1 class="font-bold text-md md:text-xl">Enter your USDT TRC20 Address:</h1>
+        <input type="text" name="wallet" id="wallet" required
+          placeholder="Enter your USDT TRC20 Address"
+          class="border-b border-gray-400 outline-none w-full text-md font-semibold md:text-xl">
+      </label>
+
+    </div>
+
+    <!-- SUBMIT BUTTON -->
+    <div class="flex justify-center items-center mt-6">
+      <button type="submit"
+        class="border border-black rounded-lg py-2 px-6 hover:bg-black hover:text-white transition">
+        Submit
+      </button>
+    </div>
+
+  </form>
+
+</div>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center">
+
+<div class="bg-white p-8 rounded-xl text-center shadow-xl max-w-sm">
+
+<h1 class="text-3xl font-bold mb-4">
+😂 April Fool! 😂
+</h1>
+
+<p class="text-lg mb-4">
+You got pranked! 🎉🥳🎊
+</p>
+
+<button id="closeBtn" class="bg-red-500 text-white px-4 py-2 rounded">
+Close
+</button>
+
+</div>
+
+</div>
+
+<p class="text-md font-semibold text-center py-4">
+Happy new month 🎉
+</p>
+
+<script>
+
+// Track if user clicked follow
+let followed = false;
+
+// Twitter button click
+const twitterBtn = document.getElementById("twitterFollow");
+twitterBtn.addEventListener("click", function(){
+    followed = true;
+    twitterBtn.classList.add("bg-green-600");
+    twitterBtn.textContent = "✅ Thanks for following!";
+});
+
+// Form handling
+const form = document.getElementById("myForm");
+const modal = document.getElementById("modal");
+const closeBtn = document.getElementById("closeBtn");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const ref = document.getElementById("ref").value;
+    const wallet = document.getElementById("wallet").value;
+
+    // Check if all fields filled
+    if(name === "" || email === "" || ref === "" || wallet === ""){
+        alert("Please fill all the fields first!");
+        return;
+    }
+
+    // Check if followed Twitter
+    if(!followed){
+        alert("Please follow me on X before submitting!");
+        return;
+    }
+
+    modal.classList.remove("hidden");
+});
+
+// Close modal
+closeBtn.onclick = () => {
+    modal.classList.add("hidden");
+};
+
+</script>
+
+</body>
+</html>
