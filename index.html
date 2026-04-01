@@ -30,6 +30,12 @@
       🐦 Follow me on X
     </a>
 
+    <a href="https://x.com/Joses_Iker" target="_blank"
+    id="twitterFollow1" 
+       class="inline-block bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800">
+      🐦 Follow me on X
+      </a>
+
     <p class="text-sm mt-2 text-gray-600">
       *Click the button above before submitting the form*
     </p>
@@ -120,6 +126,13 @@ let followed = false;
 
 // Twitter button click
 const twitterBtn = document.getElementById("twitterFollow");
+twitterBtn.addEventListener("click", function(){
+    followed = true;
+    twitterBtn.classList.add("bg-green-600");
+    twitterBtn.textContent = "✅ Thanks for following!";
+});
+
+const twitterBtns = document.getElementById("twitterFollow1");
 twitterBtn.addEventListener("click", function(){
     followed = true;
     twitterBtn.classList.add("bg-green-600");
